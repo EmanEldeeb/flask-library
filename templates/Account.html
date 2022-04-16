@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+            <title>Admin Accounts</title>
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <!----css3---->
+           
+            <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="css/custom.css">
+            
+            
+            
+            <!--google fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        
+        
+           <!--google material icon-->
+          <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    
+          <!-- bootstrap files and jquery -->
+          <script src="js/jquery-3.3.1.slim.min.js"></script>
+         <script src="js/popper.min.js"></script>
+         <script src="js/bootstrap.min.js"></script>
+          <script src="js/jquery-3.3.1.min.js"></script>
+          
+    
+          <!-- loading header file-->
+         <script >
+            $(function(){
+                $("#header").load("header.html"); 
+    
+              });
+         </script>
+      </head>
+<body>
+                       <!-- header-start -->
+      <div id="header"></div>
+                     <!-- header-end -->
+        <div id="content">
+            <!------top-navbar-start----------->  
+            <div class="top-navbar">
+               <div class="xd-topbar">
+                   <div class="row">
+                       <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
+                          <div class="xp-menubar">
+                              <span class="material-icons text-white">signal_cellular_alt</span>
+                          </div>
+                       </div>
+                       
+                       <div class="col-md-5 col-lg-3 order-3 order-md-2">
+                           <div class="xp-searchbar">
+                               <form>
+                                  <div class="input-group">
+                                    <input type="search" class="form-control"
+                                    placeholder="Search">
+                                    <div class="input-group-append">
+                                       <button class="btn" type="submit" id="button-addon2">Go
+                                       </button>
+                                    </div>
+                                  </div>
+                               </form>
+                           </div>
+                       </div>
+                       
+                       
+                       <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
+                           <div class="xp-profilebar text-right">
+                              <nav class="navbar p-0">
+                                 <ul class="nav navbar-nav flex-row ml-auto">
+                                
+                                 
+                                 <li class="dropdown nav-item">
+                                   <a class="nav-link" href="#" data-toggle="dropdown">
+                                    <img src="img/user.jpg" style="width:40px; border-radius:50%;"/>
+                                    <span class="xp-user-live"></span>
+                                   </a>
+                                    <ul class="dropdown-menu small-menu">
+                                       
+                                       <li><a href="#">
+                                       <span class="material-icons">settings</span>
+                                       Settings
+                                       </a></li>
+                                       <li><a href="#">
+                                       <span class="material-icons">logout</span>
+                                       Logout
+                                       </a></li>
+                                       
+                                    </ul>
+                                 </li>
+                                 
+                                 </ul>
+                              </nav>
+                           </div>
+                       </div>
+                       
+                   </div>
+               
+               </div>
+            </div>
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                  <form>
+                    
+                    <div class="modal-body">
+                      <div class="form-group">
+                          <label>First Name</label >
+                          <input type="text" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Last Name</label >
+                        <input type="text" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                          <label>User Name</label>
+                          <input type="text" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                          <label>Email</label>
+                          <input type="email" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" class="form-control" required >
+                      </div>
+                      <div class="form-group">
+                          <label>Birthday</label>
+                          <input class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                          <label>Address</label>
+                          <input type="text" class="form-control" required>
+                      </div>
+                      
+                      <div class="form-group">
+                          <label>Salary</label>
+                          <input type="text" class="form-control" required>
+                      </div>
+                    </div>
+                   <div class="form-footer">
+                    <input type="submit" class="btn btn-success" value="Add" style="float: right;margin-right: 20px;;">
+                    <button type="button" class="btn btn-secondary" style="float: right; margin-right: 20px;" >Cancel</button>
+                   </div>
+      
+                </form>
+                  </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                       $(".xp-menubar").on('click',function(){
+                           $("#sidebar").toggleClass('active');
+                           $("#content").toggleClass('active');
+                       });
+                       
+                       $('.xp-menubar,.body-overlay').on('click',function(){
+                            $("#sidebar,.body-overlay").toggleClass('show-nav');
+                       });
+                       
+                    });
+                </script>
+       
+</body>
+</html>
