@@ -8,10 +8,6 @@ BOOK_T = 'book_t'
 conn = sqlite3.connect(f'{DBNAME}.db')
 print("Opened database successfully")
 
-conn.execute(f'CREATE TABLE IF NOT EXISTS {BOOK_T} (title,category,isbn,language,edition,description,pagenumber)')
-print("Table created successfully")
-conn.close()
-
 @app.route('/')
 def index():
    con = sqlite3.connect(f'{DBNAME}.db')
