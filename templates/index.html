@@ -8,18 +8,18 @@
         <title>Manage Books</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-	    <!----css3---->
+	    <!-- css3 -->
         <link rel="stylesheet" href="/static/css/custom.css">
 		
 		
-		<!--google fonts -->
+		<!-- google fonts -->
 	    <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 	
 	
 	   <!--google material icon-->
-      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
 	  <!-- bootstrap files and jquery -->
 	  <script src="/static/js/jquery-3.3.1.slim.min.js"></script>
@@ -78,7 +78,7 @@
 							   
 							   <li class="dropdown nav-item">
 							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <img src="/static/img/user.jpg" style="width:40px; border-radius:50%;"/>
+								  <img src="/static/img/user.jpg" style="width:40px; border-radius:50%;" alt="user" />
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
@@ -105,10 +105,10 @@
 			 
 			 </div>
 		  </div>
-		  <!------top-navbar-end-----------> 
+		  <!-- top-navbar-end --> 
 		  
 		  
-		   <!------main-content-start-----------> 
+		   <!-- main-content-start --> 
 		     
 		      <div class="main-content">
 			     <div class="row">
@@ -136,7 +136,7 @@
 					   <table class="table table-striped table-hover">
 					      <thead>
 						     <tr>
-							 <th><span class="custom-checkbox">
+							 <th><span class="custom-checkbox"></span>
 							 <input type="checkbox" id="selectAll">
 							 <label for="selectAll"></label></th>
 							 <th>isbn</th>
@@ -154,18 +154,18 @@
 						  <tbody>
 							{% for row in rows %}
 						   <tr>
-							 <th><span class="custom-checkbox">
+							 <th><span class="custom-checkbox"></span>
 							 <input type="checkbox" id="checkbox1" name="option[]" value="1">
 							 <label for="checkbox1"></label></th>
-							 <th>{{ row.isbn }}</th>
-							 <th>{{ row.title }}</th>
-							 <th>{{ row.edition }}</th>
-							 <th>{{ row.category }}</th>
-							 <th>{{ row.language }}</th>
-							 <th>{{ row.description }}</th>
-							 <th>{{ row.pagenumber }}</th>
+							 <th>{{ row.BookIsbn }}</th>
+							 <th>{{ row.BookTitle }}</th>
+							 <th>{{ row.BookEdition }}</th>
+							 <th>{{ row.BookCategory }}</th>
+							 <th>{{ row.BookLanguage }}</th>
+							 <th>{{ row.BookDescription }}</th>
+							 <th>{{ row.BookPagesNo }}</th>
 							 <th>
-							    <a href="#edit" class="edit" data-toggle="modal">
+							    <a href="#edit" class="edit-btn" data-toggle="modal">
 							   <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
 							   </a>
 							   <a href="#delete" class="delete" data-toggle="modal">
@@ -343,6 +343,10 @@
 		  });
 		  
 	   });
+
+		 document.querySelector('.edit-btn').addEventListener('click', () => {
+			
+		 });
   </script>
   </body>
   </html>

@@ -2,8 +2,8 @@ from flask import Flask,request,redirect, url_for,render_template
 import sqlite3
 
 app = Flask(__name__)
-DBNAME = 'library'
-BOOK_T = 'book_t'
+DBNAME = 'lib2'
+BOOK_T = 'Book'
 
 conn = sqlite3.connect(f'{DBNAME}.db')
 print("Opened database successfully")
@@ -33,7 +33,7 @@ def add():
         
         with sqlite3.connect(f'{DBNAME}.db') as con:
             cur = con.cursor()
-            cur.execute(f'INSERT INTO {BOOK_T} (title,category,isbn,language,edition,description,pagenumber) VALUES (?,?,?,?,?,?,?)', (title,category,isbn,language,edition,description,pagenumber))
+            cur.execute(f'INSERT INTO {BOOK_T} (BookTitle,BookCategory,BookIsbn,BookLanguage,BookEdition,BookDescription,BookPagesNo) VALUES (?,?,?,?,?,?,?)', (title,category,isbn,language,edition,description,pagenumber))
             con.commit()
             print("added new row")
     except Exception as err:
