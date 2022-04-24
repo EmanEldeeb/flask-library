@@ -58,7 +58,24 @@ def edit():
         cur = con.cursor()
         cur.execute(f'UPDATE {BOOK_T} SET BookTitle=?,BookCategory=?,BookIsbn=?,BookLanguage=?,BookEdition=?,BookDescription=?,BookPagesNo=? WHERE BookTitle=?', (title,category,isbn,language,edition,description,pagenumber,title))
         con.commit()
-        print("updated new row")
+        print("updated row")
+    except Exception as err:
+        con.rollback()
+        print(f'SQLite error: {err}')
+    finally:
+        con.close()
+        return redirect(url_for("index"))
+
+@app.route('/delete', methods = ['POST'])
+def delete():
+    con = sqlite3.connect(f'{DBNAME}.db')
+    try:
+        title = request.form['title']
+        
+        cur = con.cursor()
+        cur.execute(f'DELETE FROM {BOOK_T} WHERE BookTitle=?', (title,))
+        con.commit()
+        print("deleted row")
     except Exception as err:
         con.rollback()
         print(f'SQLite error: {err}')

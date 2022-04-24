@@ -178,7 +178,7 @@
 									)">
 							   <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
 							   </a>
-							   <a href="#delete" class="delete" data-toggle="modal">
+							   <a href="#delete" class="delete" data-toggle="modal" onclick="deleteRow('{{ row.BookTitle }}')">
 							   <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
 							   </a>
 							 </th>
@@ -317,6 +317,7 @@
       </div>
       <div class="modal-footer">
 				<form action="/delete" method="POST">
+					<input type="hidden" name="title">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 					<button type="submit" class="btn btn-success">Delete</button>
 				</form>
@@ -364,6 +365,10 @@
 			document.querySelector('#edit input[name="language"]').value = BookLanguage;
 			document.querySelector('#edit input[name="description"]').value = BookDescription;
 			document.querySelector('#edit input[name="pagenumber"]').value = BookPagesNo;
+		 }
+
+		 function deleteRow(BookTitle) {
+			 document.querySelector('#delete input[name="title"]').value = BookTitle;
 		 }
   </script>
   </body>
